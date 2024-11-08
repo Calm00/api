@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, Response
 import random
 import json
 import os
@@ -26,13 +26,19 @@ def load_sentences():
 
 @app.route('/yiyan')
 def yiyan():
-    return jsonify({"message": "欢迎使用一言API"})
+    return Response(
+        json.dumps({"message": "欢迎使用Honahec一言API"}, ensure_ascii=False),
+        mimetype='application/json; charset=utf-8'
+    )
 
 @app.route('/yiyan/get')
 def get_yiyan():
     sentences = load_sentences()
     random_sentence = random.choice(sentences)
-    return jsonify({"sentence": random_sentence})
+    return Response(
+        json.dumps({"sentence": random_sentence}, ensure_ascii=False),
+        mimetype='application/json; charset=utf-8'
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
