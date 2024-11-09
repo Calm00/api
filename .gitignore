@@ -1,4 +1,4 @@
 yiyan/api/migrations/*
 !yiyan/api/migrations/__init__.py
 
-/yiyan/api/db.sqlite3
+yiyan/db.sqlite3
