@@ -17,6 +17,7 @@ sudo chown -R $USER:$USER /var/www/yiyan
 
 # 复制项目文件
 echo "复制项目文件..."
+sudo mkdir -p logs
 cp -r ./* /var/www/yiyan/
 
 # 创建虚拟环境
