@@ -81,4 +81,4 @@ sudo systemctl start gunicorn_yiyan
 
 echo "部署完成！"
 echo "请执行以下命令创建超级用户："
-echo "cd /var/www/yiyan && source venv/bin/activate && python manage.py createsuperuser" 
+echo "cd /var/www/yiyan && source venv/bin/activate && python3 manage.py createsuperuser" 
