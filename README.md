@@ -9,12 +9,20 @@
 ```bash
 pip install -r requirements.txt
 ```
-2. 迁移数据库
+2. 创建`logs`目录
+```bash
+mkdir logs
+```
+3. 迁移数据库
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-3. 创建超级用户
+3. 收集静态文件
+```bash
+python manage.py collectstatic
+```
+4. 创建超级用户
 ```bash
 python manage.py createsuperuser
 ```
