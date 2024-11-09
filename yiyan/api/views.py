@@ -20,26 +20,3 @@ def random_sentence(request):
     sentence = Sentence.objects.all()[random_index]
     serializer = SentenceSerializer(sentence)
     return Response(serializer.data)
-
-@api_view(['POST'])
-def create_sentence(request):
-    serializer = SentenceSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['PUT', 'PATCH'])
-def update_sentence(request, pk):
-    sentence = get_object_or_404(Sentence, pk=pk)
-    serializer = SentenceSerializer(sentence, data=request.data, partial=True)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['DELETE'])
-def delete_sentence(request, pk):
-    sentence = get_object_or_404(Sentence, pk=pk)
-    sentence.delete()
-    return Response(status=status.HTTP_204_NO_CONTENT) 
