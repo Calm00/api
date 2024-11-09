@@ -8,7 +8,7 @@ echo "开始部署一言API项目..."
 # 安装系统依赖
 echo "正在安装系统依赖..."
 sudo apt update
-sudo apt install -y python3-pip python3-venv mysql-server nginx
+sudo apt install -y python3-pip python3-venv mariadb-server nginx
 
 # 创建项目目录
 echo "创建项目目录..."
