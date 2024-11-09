@@ -33,7 +33,7 @@ pip install -r requirements.txt
 # 创建日志目录
 echo "创建日志目录..."
 mkdir -p logs
-chmod 755 logs
+chmod 777 logs
 
 # 配置 MySQL
 echo "配置 MySQL..."
@@ -71,7 +71,7 @@ EOF
 # 设置权限
 echo "设置文件权限..."
 sudo chown -R www-data:www-data /var/www/yiyan
-sudo chmod -R 755 /var/www/yiyan
+sudo chmod -R 777 /var/www/yiyan
 
 # 启动服务
 echo "启动服务..."
