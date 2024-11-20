@@ -1,4 +1,8 @@
-yiyan/api/migrations/*
-!yiyan/api/migrations/__init__.py
+yiyan/api/migrations
+yiyan/api/__pycache__
 
 yiyan/db.sqlite3
+yiyan/yiyan/__pycache__
+
+logs
+staticfiles
